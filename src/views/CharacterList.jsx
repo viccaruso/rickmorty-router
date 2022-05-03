@@ -4,7 +4,7 @@ import {
   useLocation,
 } from 'react-router-dom/cjs/react-router-dom.min';
 import CharacterNameplate from '../components/CharacterNameplate';
-import fetchCharacters from '../services/api';
+import { fetchCharacters } from '../services/api';
 import styles from './list.css';
 
 export default function CharacterList() {

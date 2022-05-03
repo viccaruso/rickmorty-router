@@ -1,5 +1,6 @@
 import { Redirect } from 'react-router-dom';
 import { Route, Switch, Link } from 'react-router-dom';
+import CharacterCard from './components/CharacterCard';
 import CharacterList from './views/CharacterList';
 
 export default function App() {
@@ -7,7 +8,7 @@ export default function App() {
     <Switch>
       <Route path="/characters/:id">
         <Link to="/">{'< All Characters'}</Link>
-        <p>Character detail goes here</p>
+        <CharacterCard />
       </Route>
       <Route path="/characters">
         <CharacterList />
