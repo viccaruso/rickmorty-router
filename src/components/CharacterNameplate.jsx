@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import styles from './nameplate.css';
 
 export default function CharacterNameplate({ character }) {
-  console.log('character', character);
   return (
     <>
       <div className={styles.nameplate}>
