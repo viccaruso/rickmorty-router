@@ -11,13 +11,25 @@ export default function CharacterCard() {
     async function fetch() {
       setLoading(true);
       const char = await fetchCharacterById(id);
-      console.log('id', id);
-      console.log('char', char);
       setCharacter(char);
       setLoading(false);
     }
     fetch();
   }, []);
 
-  return <p>hello</p>;
+  return (
+    <>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div>
+          <h3>{character.name}</h3>
+          <img src={character.image} alt={`An image of ${character.name}`} />
+          <p>{`Species: ${character.species}`}</p>
+          <p>{`Gender: ${character.gender}`}</p>
+          <p>{`Status: ${character.status}`}</p>
+        </div>
+      )}
+    </>
+  );
 }
