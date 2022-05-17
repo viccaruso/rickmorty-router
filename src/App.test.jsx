@@ -18,4 +18,15 @@ describe('<App />', () => {
 
     await screen.findByAltText('An image of Morty Smith');
   });
+
+  it('renders a character detail page directly using initialEntries', async () => {
+    render(
+      <MemoryRouter initialEntries={['/characters/4']}>
+        <App />
+      </MemoryRouter>
+    );
+
+    const beth = await screen.findByAltText('An image of Beth Smith');
+    expect(beth).toBeInTheDocument();
+  });
 });
